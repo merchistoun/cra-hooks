@@ -1,0 +1,35 @@
+import React from "react";
+
+export interface UseHook {}
+
+export const useHook = (): UseHook => {
+  // const [state, setState] = React.useState<any>({});
+  const value = useRecoilValue(recoilValue);
+
+  // dependencies
+  const { function1 } = useHook1();
+  const { function2 } = useHook2();
+  const { function3 } = useHook3();
+  const { function4 } = useHook4();
+  const { function5 } = useHook5();
+  const { function6 } = useHook6();
+  const { function7 } = useHook7();
+  const { function8 } = useHook8();
+
+  useEffect(() => {
+    if (!value) {
+      setValue(doTheWork());
+    }
+  }, [value]);
+
+  const doTheWork = () => {
+    return (
+      function1() +
+      (function2() / function3()) * function4() -
+      function5() +
+      (function6() * function7()) / function8()
+    );
+  };
+
+  return { doTheWork };
+};
